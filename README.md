@@ -42,6 +42,6 @@
 			Footer(thông tin cửa hàng, copyright, ...)		
 		
 		
-		
+		<img src="Card_2_ERD.png">
 	
 	
