@@ -42,6 +42,6 @@
 			.Footer(thông tin cửa hàng, copyright, ...)		
 		
 		
-		
+		<img src="Case_2_ERD.png">
 	
 	
