@@ -1,5 +1,4 @@
 <?php 
-    // include '../database/database.php';
 require_once '../../database/category.php';
 require_once '../../database/product.php';
 $id = $_GET['id'];

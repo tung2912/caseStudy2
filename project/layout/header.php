@@ -50,9 +50,6 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Blogs</a>
-          </li>
-          <li class="nav-item">
             <form class="nav-link" action="../searchProduct.php" method="POST">
               <input type="text" name="productName" class="form-control" placeholder="Search Product">
             </form>

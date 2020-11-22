@@ -1,5 +1,4 @@
 <?php
-include __DIR__. "/../admin/database/database.php";
 require_once '../database/Customer.php';
 require_once '../database/order.php';
 require_once '../database/orderDetail.php';

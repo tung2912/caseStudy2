@@ -1,4 +1,5 @@
 <?php
+session_start();
     require_once '../layout/header.php';
 ?>
 <div class="content">

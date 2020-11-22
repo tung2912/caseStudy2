@@ -10,9 +10,7 @@ if(!empty($orderDetail)) {
     echo "<script>
     alert('Please delete Orderdetails before delete Order');
     window.location = 'displayOrders.php';
-    </script>";   
-    // header('location: displayOrders.php');
-    
+    </script>";
 } 
 else{
     $delete = $orderDB->deleteById($id);

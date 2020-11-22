@@ -1,23 +1,15 @@
 <?php
-// include '../database/database.php';
+
 require_once '../../database/product.php';
 require_once '../../database/category.php';
 $id = $_GET['id'];
-// $query = "SELECT * FROM products WHERE product_code = '$id'";
-// $stmt = $pdo->query($query);
-// $row = $stmt->fetch();
+
 $productDB = new ProductDB;
 $product = $productDB->getById3tables($id);
 
-// $query1 = 'SELECT * FROM category';
-// $stmt1 = $pdo->query($query1);
-// $row1 = $stmt1->fetchAll();
 $categoryDB = new Category;
 $categories = $categoryDB->getAll();
 
-// $query2 = 'SELECT * FROM images';
-// $stmt2 = $pdo->query($query2);
-// $row2 = $stmt2->fetchAll();
 ?>
 <?php include_once '../layout/header.php' ?>
 

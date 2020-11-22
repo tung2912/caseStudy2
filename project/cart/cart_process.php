@@ -1,6 +1,5 @@
 <?php
 session_start();
-// include '../admin/database/database.php';
 require_once '../database/product.php';
 
 $id = isset($_GET['id']) ? $_GET['id'] : 0;

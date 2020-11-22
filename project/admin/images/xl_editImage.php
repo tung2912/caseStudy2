@@ -1,5 +1,4 @@
 <?php
-    // include '../database/database.php';
     require_once '../../database/Image.php';
     $imageDB = new ImageDB;
 

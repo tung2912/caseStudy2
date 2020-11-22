@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include '../layout/header.php';
 ?>
     <div class="content">

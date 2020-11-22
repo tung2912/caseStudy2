@@ -1,5 +1,4 @@
 <?php
-include '../admin/database/database.php';
 session_start();
 $products = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 include '../layout/header.php';

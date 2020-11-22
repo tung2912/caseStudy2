@@ -1,9 +1,5 @@
 <?php
-// include '../database/database.php';
 require_once '../../database/Image.php';
-// $query = 'SELECT * FROM category';
-// $stmt = $pdo->query($query);
-// $row = $stmt->fetchAll();
 $imageDB = new ImageDB;
 $images = $imageDB->getAll();
 ?>

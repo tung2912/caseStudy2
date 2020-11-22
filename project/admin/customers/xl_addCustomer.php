@@ -1,5 +1,4 @@
 <?php
-    // include '../database/database.php';
     require_once '../../database/Customer.php';
 
     $customer_name = $_POST['customer_name'];

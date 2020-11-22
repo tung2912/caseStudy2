@@ -1,9 +1,4 @@
 <?php
-// include '../database/database.php';
-// $query = "SELECT products.product_code, products.product_name, category.category_name,
-//          products.product_description, products.instock_quantity, products.price, images.image1, products.sold_quantity, products.views, products.update_date 
-//         FROM (products INNER JOIN category ON products.category_id = category.category_id) INNER JOIN images ON products.product_code = images.product_code ORDER BY products.product_code;";
-// $stmt = $pdo->query($query);
 
 require_once '../../database/product.php';
 $productDB = new ProductDB;

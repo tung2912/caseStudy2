@@ -1,13 +1,10 @@
 <?php
-// include '../database/database.php';
+
 require_once '../../database/Image.php';
 $id = $_GET['id'];
 
 $imageDB = new ImageDB;
 $image = $imageDB->getById($id);
-// $query = "SELECT * FROM category WHERE category_id = '$id'";
-// $stmt = $pdo->query($query);
-// $row = $stmt->fetch();
 ?>
 <?php include_once '../layout/header.php' ?>
 

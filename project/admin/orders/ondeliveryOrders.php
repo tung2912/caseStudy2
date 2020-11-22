@@ -1,6 +1,5 @@
 <?php
     require_once '../../database/order.php';
-
     $orderDB = new Order;
     $onDeliveryOrders = $orderDB->getByStatus('ON DELIVERY');
 ?>

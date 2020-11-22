@@ -1,12 +1,9 @@
 <?php
-// include '../database/database.php';
 require_once '../../database/order.php';
 $id = $_GET['id'];
 
 $orderDB = new Order;
 $order = $orderDB->getById($id);
-
-
 ?>
 <?php include_once '../layout/header.php' ?>
 

@@ -1,5 +1,4 @@
 <?php
-    // include '../database/database.php';
     require_once '../../database/Image.php';
 
     $image_id = $_POST['image_id'];

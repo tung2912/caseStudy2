@@ -1,13 +1,9 @@
 <?php
-// include '../database/database.php';
 require_once '../../database/Customer.php';
 $id = $_GET['id'];
 
 $customerDB = new Customer;
 $customer = $customerDB->getById($id);
-// $query = "SELECT * FROM category WHERE category_id = '$id'";
-// $stmt = $pdo->query($query);
-// $row = $stmt->fetch();
 ?>
 <?php include_once '../layout/header.php' ?>
 

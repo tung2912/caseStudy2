@@ -4,11 +4,6 @@ require_once '../../database/product.php';
 $orderNumber = $_GET['orderNumber'];
 $productDB = new ProductDB;
 $products = $productDB->getAll();
-// var_dump($products);die();
-
-// $query1 = 'SELECT * FROM images';
-// $stmt = $pdo->query($query1);
-// $row1 = $stmt->fetchAll();
 ?>
 <?php include_once '../layout/header.php' ?>
 <div id="layoutSidenav_content">

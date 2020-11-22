@@ -8,8 +8,6 @@ $productOrderDetail = $orderDetailDB->getById($orderNumber, $product_code);
 $old_quantity = $productOrderDetail['buy_quantity'];
 ?>
 <?php include_once '../layout/header.php' ?>
-
-
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid">

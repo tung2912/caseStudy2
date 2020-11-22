@@ -1,9 +1,6 @@
 <?php
-// include '../database/database.php';
 require_once '../../database/category.php';
-// $query = 'SELECT * FROM category';
-// $stmt = $pdo->query($query);
-// $row = $stmt->fetchAll();
+
 $categoryDB = new Category;
 $categories = $categoryDB->getAll();
 ?>

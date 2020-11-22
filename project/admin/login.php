@@ -1,8 +1,4 @@
 <?php
-// include 'database/database.php';
-//     $query = "SELECT *FROM users";
-//     $stmt = $pdo->query($query);
-//     $users = $stmt->fetchAll();
 require_once '../database/user.php';
 $userDB = new User;
 $users = $userDB->getAll();
