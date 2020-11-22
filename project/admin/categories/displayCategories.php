@@ -1,7 +1,7 @@
 <?php
-include '../database/database.php';
-$query = "SELECT * FROM category";
-$stmt = $pdo->query($query);
+require_once '../../database/category.php';
+$categoryDB = new Category;
+$display =$categoryDB->getAll();
 ?>
 <?php include_once '../layout/header.php' ?>
         <div id="layoutSidenav_content">
@@ -37,18 +37,18 @@ $stmt = $pdo->query($query);
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <?php while ($row = $stmt->fetch()) { ?>
+                                        <?php foreach($display as $value): ?>
                                             <tr>
-                                                <td><?= $row['category_id'] ?></td>
-                                                <td><?= $row['category_name'] ?></td>
-                                                <td><?= $row['category_description'] ?></td>
-                                                <td><img src="<?= $row['category_image'] ?>" alt="" style="max-width:100px; max-height:100px"></td>
+                                                <td><?= $value['category_id'] ?></td>
+                                                <td><?= $value['category_name'] ?></td>
+                                                <td><?= $value['category_description'] ?></td>
+                                                <td><img src="<?= $value['category_image'] ?>" alt="" style="max-width:100px; max-height:100px"></td>
                                                 <td class="d-flex">
-                                                    <a href="editCategory.php?id=<?= $row['category_id'] ?>" class="btn btn-sn btn-outline-primary">Edit</a>
-                                                    <a href="deleteCategory.php?id=<?= $row['category_id']; ?>" class="btn btn-danger ml-1">Delete</a>
+                                                    <a href="editCategory.php?id=<?= $value['category_id'] ?>" class="btn btn-sn btn-outline-primary">Edit</a>
+                                                    <a href="deleteCategory.php?id=<?= $value['category_id']; ?>" class="btn btn-danger ml-1">Delete</a>
                                                 </td>
                                             </tr>
-                                        <?php } ?>
+                                        <?php endforeach ;?>
                                     </tbody>
                                 </table>
                             </div>

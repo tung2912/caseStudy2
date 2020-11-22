@@ -1,26 +1,34 @@
 <?php
 include __DIR__. "/../admin/database/database.php";
+require_once '../database/Customer.php';
+require_once '../database/order.php';
+require_once '../database/orderDetail.php';
+require_once '../database/product.php';
 session_start();
 $products = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 if ($_SERVER["REQUEST_METHOD"]=="POST") {
-  $name = $_POST['name'];
+$name = $_POST['name'];
 $address = $_POST['address'];
 $phone = $_POST['phone'];
 $email = $_POST['email'];
 
-$queryInsertCustomer = "INSERT INTO customers (customer_name,customer_address,customer_phone,customer_email) 
-        VALUES ('$name','$address','$phone','$email');";
-$pdo->query($queryInsertCustomer);
-$customer_id = $pdo->lastInsertId();
-$queryInsertOrder = "INSERT INTO orders (customer_id) VALUES ('$customer_id');";
-$pdo->query($queryInsertOrder);
-$order_id = $pdo->lastInsertId();
+$orderDetailDB = new OrderDetail;
+$customerDB = new Customer;
+$orderDB = new Order;
+$productDB = new ProductDB;
+
+$insertCustomer = $customerDB->insert($name, $address, $phone, $email);
+$customer_id = $customerDB->getLastInsert();
+
+$insertOrder = $orderDB->insert($customer_id);
+$orderNumber = $orderDB->getLastInsert();
+
 foreach($_SESSION['cart'] as $id => $value){
   $qty = $value['quantity'];
   $price = $value['price'];
-  $queryInsertDetail = "INSERT INTO orderdetails (orderNumber,product_code,buy_quantity,priceEach)
-  VALUES ('$order_id','$id', '$qty','$price');";
-  $pdo->query($queryInsertDetail);
+  $insertDetails = $orderDetailDB->insert($orderNumber, $id, $qty, $price);
+
+  $changeStock = $productDB->updateStockById($qty, $id);
 }
 unset($_SESSION['cart']);
 header ('location:successPayment.php');
@@ -59,14 +67,14 @@ header ('location:successPayment.php');
                 <label for="">Shipping Information</label>
               </div>
               <div class="input-group">
-                <input type="text" name="name" class="form-control float-right" placeholder="Full name">
+                <input type="text" name="name" class="form-control float-right" placeholder="Full name" required>
               </div>
               <div class="input-group mt-2">
-                <input type="text" name="address" class="form-control" placeholder="Address">
+                <input type="text" name="address" class="form-control" placeholder="Address" required>
               </div>
               <div class="input-group mt-2">
-                <input type="text" name="phone" class="form-control float-left mr-1" placeholder="Phone Number">
-                <input type="email" name="email" class="form-control float-right ml-1" placeholder="Email address">
+                <input type="text" name="phone" class="form-control float-left mr-1" placeholder="Phone Number" required>
+                <input type="email" name="email" class="form-control float-right ml-1" placeholder="Email address" required>
                 <div class="clearfix"></div>
               </div>
               <div class="float-left mt-2">

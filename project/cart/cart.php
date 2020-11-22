@@ -9,18 +9,7 @@ include '../layout/header.php';
         include 'emptyCart.php';
     } else {
         include 'issetCart.php';    
-    }
-
-    // if(isset($_GET['action'])) {
-    //     switch ($_GET['action']){
-    //         case 'increase':
-    //             $quantity = $_GET['itemQty'];
-    //             $id = $_GET['id'];
-    //             $products[$id][$quantity]++;
-    //         break;
-    //         }
-    // }
-    
+    }    
 ?>
 <?php
 include '../layout/footer.php';

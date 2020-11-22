@@ -1,5 +1,7 @@
 <?php
-    include '../database/database.php';
+    require_once '../../database/category.php';
+    $categoryDB = new Category;
+
     $id = $_POST['id'];
 
     $categoryCode = $_POST['categoryCode'];
@@ -7,12 +9,7 @@
     $categoryDescription = $_POST['categoryDescription'];
     $image = $_POST['image'];
 
-    $edit = "UPDATE category 
-    SET category_id = '$categoryCode', category_name = '$categoryName', category_description = '$categoryDescription',
-    category_image = '$image' 
-    WHERE category_id = '$id'";
-
-    $pdo->query($edit);
+    $edit = $categoryDB->updateById($categoryCode, $categoryName, $categoryDescription, $image, $id );
     if($edit) {
         header('location: displayCategories.php');
     }

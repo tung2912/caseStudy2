@@ -17,6 +17,9 @@ a:hover {
 div {
     display: block;
 }
+body {
+    font-family: "Roboto Condensed",sans-serif;
+}
 header {
     display: block;
 }
@@ -27,7 +30,7 @@ table,th,td {
     position: fixed;
     z-index: 1000;
     width: 100%;
-    margin-top: -109px ;
+    margin-top: -86px ;
 }
 .myMenu {
     background: #343a40;
@@ -72,7 +75,7 @@ table,th,td {
     transition: .5s all ease;
 }
 .content{
-    margin-top: 109px;
+    margin-top: 86px;
 }
 .categoryTitle {
     margin-top: 2%;
@@ -331,7 +334,112 @@ main {
                         color: #000;
                     }       
 
+/* categoryPages */
 
+.banner {
+height: 550px;
+margin-bottom: 60px ;
+position: relative;
+width: 100%;
+overflow: hidden;
+background-color: #000;
+}
+    .banner .banner_img_topWear{
+        background-image: url("https://cdn.shopify.com/s/files/1/1687/1083/collections/Capture_1_5_3_1512x.jpg?v=1592153011");
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+    }
+    .banner .banner_img_headWear{
+        background-image: url("https://cdn.shopify.com/s/files/1/1687/1083/collections/Capture_1_5_3_1512x.png?v=1592153076");
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+    }
+    .banner .banner_img_bottomWear{
+        background-image: url("https://cdn.shopify.com/s/files/1/1687/1083/collections/IMG_2517_1080x.jpg?v=1589450413");
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+    }
+    .banner .banner_img_outerWear{
+        background-image: url("https://cdn.shopify.com/s/files/1/1687/1083/collections/27624606_867278653433917_3247973712567499722_o_1512x.png?v=1589449880");
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+    }
+    .banner .banner_img_accessories{
+        background-image: url("https://cdn.shopify.com/s/files/1/1687/1083/collections/3_1512x.png?v=1589571162");
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+    }
+    .banner .banner_content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    .banner .banner_content .banner_content_text {
+        width: 100%;
+        padding: 0 40px;
+        max-width: 1300px;
+        text-align: center!important;
+        color: #fafafa;
+        font-style: italic;
+        font-weight:700;
+        font-size: 46px;
+    }
+
+    /* footer */
+    .social :hover {
+        cursor: pointer;
+    }
+    .footer-link {
+        font-family: 'Roboto', sans-serif;
+    }
+    /* aboutUs */
+    .imgAboutUs {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+    }
+    .imgAboutUs img {
+        height: auto;
+        max-width: 100%;
+        border: none;
+    }
+    .aboutUsTitle {
+        font-family: "Roboto Condensed", sans-serif;
+    }
 /* Medias */
 @media (max-width:990px) {
     .myItem {
@@ -345,6 +453,10 @@ main {
     .myItem {
         width: 40%;
     }
+    .banner {
+        height: 300px;
+        margin-bottom: 20px ;
+    } 
 }
 @media (max-width:550px) {
     .myItem {
