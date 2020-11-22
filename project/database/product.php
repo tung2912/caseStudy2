@@ -110,11 +110,11 @@
         }
 
         public function updateById($product_code, $product_name, $category_id, $product_description,
-         $instock_quantity,$price, $sold_quantity, $views, $update_date, $id) 
+         $instock_quantity,$price, $sold_quantity, $views, $id) 
         {
           $query = "UPDATE products
-          SET product_code = ?, product_name = ?, category_id = ?, product_description = ?
-          instock_quantity = ?, price = ?, sold_quantity = ?, views = ?, update_date = ? WHERE product_code = ?";
+          SET product_code = ?, product_name = ?, category_id = ?, product_description = ?,
+          instock_quantity = ?, price = ?, sold_quantity = ?, views = ? WHERE product_code = ?";
 
           $stmt = $this->conn->prepare($query);
           $stmt->bindValue(1,$product_code);
@@ -125,8 +125,7 @@
           $stmt->bindValue(6,$price);
           $stmt->bindValue(7,$sold_quantity);
           $stmt->bindValue(8,$views);
-          $stmt->bindValue(9,$update_date);
-          $stmt->bindValue(10,$id);
+          $stmt->bindValue(9,$id);
 
           $stmt->execute();
 

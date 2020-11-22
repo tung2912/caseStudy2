@@ -10,11 +10,10 @@
     $price = $_POST['price'];
     $sold = $_POST['sold'];
     $views = $_POST['view'];
-    $updateDate = "now()";
 
     $productDB = new ProductDB;
     $update = $productDB->updateById($productCode, $productName, $category, 
-    $description, $inStock, $price, $sold, $views, $updateDate, $id);
+    $description, $inStock, $price, $sold, $views, $id);
     if ($update) {
         header('location:displayProducts.php');
     }
